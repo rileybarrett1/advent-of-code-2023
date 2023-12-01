@@ -1,0 +1,53 @@
+def file():
+    file_list=[]
+    with open("advent#1_input.txt","r",newline="") as file:
+         for lines in file:
+             file_list.append(lines.strip("\r\n"))
+    return file_list
+"""
+ Part 1
+#
+words = file()
+storage_for_values=[]
+
+for word in words:
+    storage=[]
+    for letter in word:
+        if letter.isdigit():
+            storage.append(letter)
+    num=storage[0]+storage[-1]
+    storage_for_values.append(int(num))
+    
+print(sum(storage_for_values))
+"""
+
+# Part 2
+temp = "eightwothree"
+temp.count("eight")
+temp.find("eight")
+
+str_num = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+
+words = ["two1nine",
+         "eightwothree",
+         "abcone2threexyz",
+         "xtwone3four",
+         "4nineeightseven2",
+         "zoneight234",
+         "7pqrstsixteen"]
+
+for word in words:
+
+    print(word)
+    temp = []
+    for num in str_num:
+        if (word.find(num) != -1):
+            #print(num)
+            temp.append(num)
+    
+    index = word.find(temp[0])
+    for numb in temp:
+        if word.find(numb) < index:
+            index = word.find(numb)
+    print(index)
+    
